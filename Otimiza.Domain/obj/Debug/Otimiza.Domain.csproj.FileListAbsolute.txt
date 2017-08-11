@@ -1,0 +1,5 @@
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Domain\bin\Debug\Otimiza.Domain.dll
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Domain\bin\Debug\Otimiza.Domain.pdb
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Domain\obj\Debug\Otimiza.Domain.dll
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Domain\obj\Debug\Otimiza.Domain.pdb
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Domain\obj\Debug\Otimiza.Domain.csprojResolveAssemblyReference.cache

@@ -1,0 +1,12 @@
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Infra\bin\Debug\Otimiza.Infra.dll.config
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Infra\bin\Debug\Otimiza.Infra.dll
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Infra\bin\Debug\Otimiza.Infra.pdb
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Infra\bin\Debug\EntityFramework.dll
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Infra\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Infra\bin\Debug\Otimiza.Domain.dll
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Infra\bin\Debug\Otimiza.Domain.pdb
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Infra\bin\Debug\EntityFramework.xml
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Infra\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Infra\obj\Debug\Otimiza.Infra.csprojResolveAssemblyReference.cache
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Infra\obj\Debug\Otimiza.Infra.dll
+C:\Users\Rafael\Documents\Visual Studio 2017\Projects\Otimiza\Otimiza.Infra\obj\Debug\Otimiza.Infra.pdb

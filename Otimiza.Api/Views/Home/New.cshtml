@@ -1,0 +1,50 @@
+﻿<div class="row">
+    <form class="form-horizontal" ng-controller="NewController">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="placa">Placa:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="placa" ng-model="veiculo.placa" placeholder="Digite a Placa"  required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="placa">Tipo de Veículo:</label>
+            <div class="col-xs-5 selectContainer">
+                <select class="form-control" ng-model="veiculo.tipoVeiculo" ng-options="obj.titulo for obj in result" required>                     
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="proprietario">Proprietário:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="proprietario" ng-model="veiculo.proprietario" placeholder="Digite o Proprietário"  required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-1">
+                <button type="submit" class="btn btn-default" ng-click="Voltar()">Voltar</button>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success" ng-click="Veiculo()"  >Salvar</button>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Cadastro de Veículos</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Cadastro realizado com sucesso.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
