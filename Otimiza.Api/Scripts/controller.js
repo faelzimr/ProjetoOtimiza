@@ -51,10 +51,10 @@ myapp.controller('fupController', function ($scope, $http) {
             }
         };
         $http(request).success(function (d) {
-            alert(d);
+            $('#myModal').modal('show');
             $scope.reset();
         }).error(function () {
-            alert('Falha');
+            $('#myModal2').modal('show');
             $scope.reset();
         })
     }
@@ -75,13 +75,17 @@ myapp.controller('VeiculoController', function ($scope, $http) {
         $scope.result = response;
     });
     $scope.DeletaVeiculo = function (id) {
+        $scope.id = id;
+        $('#myModal').modal('show');
+    };
+    $scope.ExcluirVeiculo = function (id) {
         $http.delete('http://localhost:51396/api/Veiculo/' + id).success(function (response) {
             $http.get('http://localhost:51396/api/Veiculo').success(function (response) {
                 $scope.result = response;
+                $('#myModal').modal('hide');
             });
         })
-
-    };
+    }
     $scope.EditVeiculo = function (id) {
         window.location.href = "/Home/Edit/" + id;
     };
