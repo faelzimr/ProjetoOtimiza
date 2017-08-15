@@ -1,46 +1,53 @@
-﻿<div class="row">
-    <form class="form-horizontal" ng-controller="EditController">
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="placa">Placa:</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="placa" placeholder="Digite a Placa" ng-model="edit.placa" value="{{edit.placa}}" required>
-            </div>
+﻿<div class="container" ng-controller="EditController">
+    <div class="panel panel-info" style="margin-top:10px">
+        <div class="panel-heading">
+            Cadastre um novo Veículo
         </div>
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="placa">Tipo de Veículo:</label>
-            <div class="col-xs-5 selectContainer">
-                <select class="form-control"  ng-model="edit.tipoVeiculo" ng-options="obj.titulo for obj in result" required >                   
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="proprietario">Proprietário:</label>
-            <div class="col-sm-10">
-                <input type="text" required class="form-control" id="proprietario" placeholder="Digite o Proprietário" ng-model="edit.proprietario" value="{{edit.proprietario}}">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-1">
-                <button type="submit" class="btn btn-default" ng-click="Voltar()">Voltar</button>
-            </div>
-            <div >
-                <button type="submit" class="btn btn-success" ng-click="Editar()">Editar</button>
-            </div>
-        </div>
-    </form>
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Editação de Veículos</h4>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="placa">Placa:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="placa" placeholder="Digite a Placa" ng-model="edit.placa" value="{{edit.placa}}" required>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <p>Edição realizada com sucesso.</p>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="placa">Tipo de Veículo:</label>
+                    <div class="col-xs-5 selectContainer">
+                        <select class="form-control" ng-model="edit.tipoVeiculo" ng-options="obj.titulo for obj in result" required></select>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="proprietario">Proprietário:</label>
+                    <div class="col-sm-10">
+                        <input type="text" required class="form-control" id="proprietario" placeholder="Digite o Proprietário" ng-model="edit.proprietario" value="{{edit.proprietario}}">
+                    </div>
                 </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-1">
+                        <button type="submit" class="btn btn-default" ng-click="Voltar()">Voltar</button>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success" ng-click="Editar()">Editar</button>
+                    </div>
+                </div>
+            </form>            
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Editação de Veículos</h4>
+            </div>
+            <div class="modal-body">
+                <p>Edição realizada com sucesso.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>

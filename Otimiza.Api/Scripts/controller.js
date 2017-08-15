@@ -1,4 +1,75 @@
 ﻿var myapp = angular.module('myapp', []);
+myapp.directive('ngFiles', ['$parse', function ($parse) {
+    function fn_link(scope, element, attrs) {
+        var onChange = $parse(attrs.ngFiles);
+
+        element.on('change', function (event) {
+            onChange(scope, { $files: event.target.files });
+        })
+    }
+    return {
+        link: fn_link
+    }
+
+}])
+myapp.controller('fupController', function ($scope, $http) {
+    var formdata = new FormData();
+
+    $scope.getTheFiles = function ($files) {
+        $scope.imagesrc = [];
+
+        for (var i = 0; i < $files.length; i++) {
+            var reader = new FileReader();
+            reader.fileName = $files[i].name;
+
+            reader.onload = function (event) {
+                var image = {};
+                image.Name = event.target.fileName;
+                image.Size = (event.total / 1024).toFixed(2);
+                image.Src = event.target.result;
+                $scope.imagesrc.push(image);
+                $scope.$apply();
+            }
+
+            reader.readAsDataURL($files[i]);
+        }
+
+        angular.forEach($files, function (value, key) {
+            formdata.append(key, value);
+        })
+    }
+
+    $scope.uploadFiles = function () {
+        var url_atual = window.location.href;
+        var id = url_atual.split("/")[5];
+        var request = {
+            method: 'PUT',
+            url: '/api/FileUpload/'+ id,
+            data: formdata,
+            headers: {
+                'Content-Type': undefined
+            }
+        };
+        $http(request).success(function (d) {
+            alert(d);
+            $scope.reset();
+        }).error(function () {
+            alert('Falha');
+            $scope.reset();
+        })
+    }
+
+    $scope.reset = function () {
+        angular.forEach(
+            angular.element("input [type = 'file']"),
+            function (inputElem) {
+                angular.element(inputElem).val(null);
+            }
+        );
+        $scope.imagesrc = [];
+        formdata = new FormData();
+    }
+})
 myapp.controller('VeiculoController', function ($scope, $http) {
     $http.get('http://localhost:51396/api/Veiculo').success(function (response) {
         $scope.result = response;
@@ -16,6 +87,9 @@ myapp.controller('VeiculoController', function ($scope, $http) {
     };
     $scope.InfoVeiculo = function (id) {
         window.location.href = "/Home/Info/" + id;
+    };
+    $scope.AddFotos = function (id) {
+        window.location.href = "/Home/Gallery/" + id;
     };
     $scope.NewVeiculo = function () {
         window.location.href = "/Home/New";
@@ -40,9 +114,6 @@ myapp.controller('EditController', function ($scope, $http) {
     }
 
     $scope.Editar = function () {
-        console.log($scope.edit.placa);
-        console.log($scope.edit.tipoVeiculo.id);
-        console.log($scope.edit.proprietario);
         if ($scope.edit.placa != "") {
             var request = $http({
                 method: "put",
@@ -69,6 +140,13 @@ myapp.controller('InfoController', function ($scope, $http) {
         $http.get('http://localhost:51396/api/TipoVeiculo/' + $scope.info.tipoVeiculoId).success(function (response) {
             $scope.tipoVeiculo = response;
         });
+        $http.get('http://localhost:51396/api/Imagens/' + id).success(function (response) {
+            $scope.imagens = response;
+            $scope.fotos = false;
+            if ($scope.imagens.length > 0){
+                $scope.fotos = true;
+            }
+        });
     });
 });
 
@@ -82,9 +160,6 @@ myapp.controller('NewController', function ($scope, $http) {
     }
 
     $scope.Veiculo = function () {
-        console.log($scope.veiculo.placa);
-        console.log($scope.veiculo.tipoVeiculo.id);
-        console.log($scope.veiculo.proprietario);
         if ($scope.veiculo.placa != "") {
             var request = $http({
                 method: "post",

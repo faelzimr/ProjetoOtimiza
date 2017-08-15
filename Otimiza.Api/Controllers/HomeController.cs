@@ -32,5 +32,11 @@ namespace Otimiza.Api.Controllers
 
             return View();
         }
+        public ActionResult Gallery()
+        {
+            ViewBag.Title = "Galeria de Fotos";
+
+            return View();
+        }
     }
 }

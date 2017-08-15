@@ -16,7 +16,8 @@ namespace Otimiza.Infra.Mappings
 
             HasKey(x=>x.Id);
 
-            Property(x => x.ImagemVeiculo).HasMaxLength(100).IsRequired();
+            Property(x => x.FileName).IsRequired();
+            Property(x => x.Title).IsRequired();
 
             HasRequired(x => x.Veiculo);
         }

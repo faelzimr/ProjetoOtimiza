@@ -43,16 +43,14 @@ namespace Otimiza.Infra.DataContexts
             context.SaveChanges();
 
             context.Veiculos.Add(new Veiculo { Id = 1, Placa = "hhv-1723", TipoVeiculoId = 1, Proprietario = "Rafael" });
-            context.Veiculos.Add(new Veiculo { Id = 2, Placa = "asd-1289", TipoVeiculoId = 2, Proprietario = "Roger" });
-            context.Veiculos.Add(new Veiculo { Id = 2, Placa = "asd-1289", TipoVeiculoId = 3, Proprietario = "Roger" });
-            context.Veiculos.Add(new Veiculo { Id = 2, Placa = "asd-1289", TipoVeiculoId = 4, Proprietario = "Roger" });
-            context.Veiculos.Add(new Veiculo { Id = 2, Placa = "asd-1289", TipoVeiculoId = 5, Proprietario = "Roger" });
-            context.Veiculos.Add(new Veiculo { Id = 2, Placa = "asd-1289", TipoVeiculoId = 6, Proprietario = "Roger" });
-            context.Veiculos.Add(new Veiculo { Id = 2, Placa = "asd-1289", TipoVeiculoId = 7, Proprietario = "Roger" });
+            context.Veiculos.Add(new Veiculo { Id = 2, Placa = "gfh-1289", TipoVeiculoId = 2, Proprietario = "Roger" });
+            context.Veiculos.Add(new Veiculo { Id = 2, Placa = "fgd-2345", TipoVeiculoId = 3, Proprietario = "Roberto" });
+            context.Veiculos.Add(new Veiculo { Id = 2, Placa = "dfg-5465", TipoVeiculoId = 4, Proprietario = "Rafael" });
+            context.Veiculos.Add(new Veiculo { Id = 2, Placa = "vcb-5676", TipoVeiculoId = 5, Proprietario = "Rômulo" });
+            context.Veiculos.Add(new Veiculo { Id = 2, Placa = "cvb-4454", TipoVeiculoId = 6, Proprietario = "Roberta" });
+            context.Veiculos.Add(new Veiculo { Id = 2, Placa = "ghf-5467", TipoVeiculoId = 7, Proprietario = "Ricardo" });
             context.SaveChanges();
 
-            context.Imagens.Add(new Imagem { Id = 1, ImagemVeiculo = "Teste", VeiculoId = 1 });
-            context.SaveChanges();
             base.Seed(context);
         }
     }
